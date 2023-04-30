@@ -2,14 +2,14 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/SerhiiAndriienko/goit-js-hw-11",
+  "homepage": "https://github.com/SerhiiAndriienko/ProjectX",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /ProjectX/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SerhiiAndriienko/goit-js-hw-11.git"
+    "url": "git+https://github.com/SerhiiAndriienko/ProjectX.git"
   },
   "keywords": [],
   "author": "Serhii Andriienko <Krinn@meta.ua>",

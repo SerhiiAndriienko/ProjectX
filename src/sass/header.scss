@@ -1,0 +1,249 @@
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+
+  @include breakpoint(tab) {
+    max-width: 768px;
+  }
+  @include breakpoint(des) {
+    max-width: 1200px;
+  }
+}
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(63, 2, 2, 0.4)),
+    url(../images/header/header-bg-mob.2faa0739.jpg);
+  color: $almost-white;
+
+  min-width: 320px;
+  // height: 230px;
+  text-align: center;
+  background-color: $almost-black;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 25px 10px 92px 10px;
+
+  @include breakpoint(tab) {
+    min-width: 768px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(63, 2, 2, 0.4)),
+      url(../images/header/header-bg-tab.928bb961.jpg);
+  }
+  @include breakpoint(des) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(63, 2, 2, 0.4)),
+      url(../images/header/header-bg-desk.f2df133c.jpg);
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+
+    .navigation__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      @include breakpoint(tab) {
+        justify-content: end;
+      }
+      .navigation__list-item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: color $time $time-distribution;
+        @include breakpoint(tab) {
+          margin-left: 30px;
+        }
+        &:first-child {
+          margin-left: 40px;
+        }
+        &:hover,
+        &:focus {
+          color: $almost-orange;
+        }
+        a {
+          text-transform: uppercase;
+          font-weight: 500;
+          line-height: 1.17;
+          position: relative;
+        }
+
+        .current::after {
+          display: block;
+          content: '';
+          background-color: $almost-orange;
+          height: 3px;
+          width: 100%;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+        }
+      }
+
+      svg {
+        width: 32;
+        height: 32;
+
+        &:hover,
+        &:focus {
+          use {
+            fill: $almost-orange;
+          }
+        }
+      }
+      use {
+        transition: fill $time $time-distribution;
+
+        fill: $almost-white;
+      }
+    }
+    .navigation__logo-link {
+      &:focus,
+      &:hover {
+        color: $almost-orange;
+        border-bottom: 0.5px solid rgb(202, 43, 43);
+        transition: border $time $time-distribution;
+      }
+      .navigation__logo-link--name {
+        display: none;
+      }
+      @include breakpoint(tab) {
+        display: flex;
+        align-items: center;
+
+        .navigation__logo-link--name {
+          display: block;
+          margin-left: 15px;
+        }
+      }
+      &:hover,
+      &:focus {
+        .navigation__logo-link--icon {
+          stroke: $almost-orange;
+          rotate: 180deg;
+        }
+      }
+      .navigation__logo-link--icon {
+        stroke: $almost-white;
+
+        width: 32;
+        height: 32;
+        transition: stroke $time $time-distribution,
+          rotate $time $time-distribution;
+        rotate: none;
+      }
+    }
+  }
+  .search-form {
+    position: relative;
+    padding-bottom: 15px;
+
+    input {
+      padding: 5px;
+      min-width: 320px;
+      color: $almost-white;
+      border: none;
+      border-bottom: 0.5px solid $almost-white;
+      background: 0 0;
+      outline: none;
+      font-size: 14px;
+      line-height: 1.14;
+
+      &:focus,
+      &:hover {
+        border-bottom: 0.5px solid rgb(202, 43, 43);
+        transition: border $time $time-distribution;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        color: rgba(252, 252, 252, 0.5);
+      }
+    }
+
+    .search-btn {
+      background: 0 0;
+      border: none;
+      padding: 5px;
+      position: absolute;
+      top: 2px;
+      left: 94%;
+      padding: 3px;
+
+      @include breakpoint(tab) {
+        top: 0px;
+        left: 68%;
+        padding: 5px;
+      }
+      @include breakpoint(des) {
+        left: 61%;
+      }
+      svg {
+        width: 15px;
+        height: 15px;
+        stroke: $almost-white;
+        fill: rgba(0, 0, 0, 0);
+        transition: stroke $time $time-distribution;
+
+        &:hover,
+        &:focus {
+          stroke: rgb(202, 43, 43);
+        }
+      }
+    }
+  }
+  .filter__form {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(tab) {
+      flex-wrap: nowrap;
+    }
+    .filter__form-select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 5px;
+      border-radius: 15px;
+
+      text-align: center;
+      background-color: transparent;
+      border: 1px solid $almost-white;
+      color: $almost-white;
+      transition: color $time $time-distribution;
+      @include breakpoint(tab) {
+        margin-bottom: 0px;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+      &:hover {
+        color: $almost-orange;
+        border: 1px solid $almost-orange;
+      }
+
+      option {
+        color: $almost-white;
+
+        align-items: center;
+        background-color: $almost-black;
+      }
+    }
+    .button__reset {
+      width: 100%;
+      border: 1px solid $almost-white;
+      color: $almost-white;
+      background-color: transparent;
+      border: 1px solid $almost-white;
+      text-transform: uppercase;
+      border-radius: 15px;
+      padding: 5px;
+      transition: color $time $time-distribution;
+      @include breakpoint(tab) {
+        padding: 0px;
+      }
+      &:hover,
+      &:focus {
+        color: $almost-orange;
+        border: 1px solid $almost-orange;
+      }
+    }
+  }
+}

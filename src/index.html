@@ -5,41 +5,91 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg" sizes="32x32" href="./images/svg/test.svg#icon-filmoteka">
   <link rel="stylesheet" href="./css/styles.css">
-  <title>Homework 11</title>
+  <link rel="stylesheet" href="./sass/index.scss">
+
+  <title>Filmoteka</title>
 </head>
 
 <body>
-  <header class="blue-header">
-    <form class="radio-buttons">
-      <label>
-        <input id="js-photo" type="radio" name="response-type" checked>
+  <header class="header">
+    <div class="container">
+      <nav class="navigation">
+        <a class="navigation__logo-link" href="#">
+          <svg class="navigation__logo-link--icon">
+            <use href="./images/svg/icons.svg#icon-filmoteka"></use>
+          </svg>
+          <span class="navigation__logo-link--name">Filmoteka</span>
+        </a>
+        <ul class="navigation__list">
+          <li class="navigation__list-item "><a class="current" href="#">
+              Home
+            </a> </li>
+          <li class="navigation__list-item"><a href="#">
+              My Library
+            </a></li>
+          <li class="navigation__list-item">
+            <a href="#">
+              <svg>
+                <use href="./images/svg/icons.svg#icon-account"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <form class="search-form"><input class="search-form-input" type="text" name="searchQuery" autocomplete="off"
+          placeholder="Movie search">
+        <button aria-label="Search" type="submit" class="button search-btn"> <svg class="search-btn__icon">
+            <use href="./images/svg/icons.svg#icon-search"></use>
+          </svg> </button>
+      </form>
+      <form class="filter__form" id="filter-form">
 
-        <span> Photo</span>
+        <select class="filter__form-select filter__form-select--genres" name="genreForm" id="genreFilter">
+          <option class="filter__form-genres" value="start">Genre</option>
+          <option class="filter__form-genres" value="28">Action</option>
+          <option class="filter__form-genres" value="12">Adventure</option>
+          <option class="filter__form-genres" value="16">Animation</option>
+          <option class="filter__form-genres" value="35">Comedy</option>
+          <option class="filter__form-genres" value="80">Crime</option>
+          <option class="filter__form-genres" value="99">Documentary</option>
+          <option class="filter__form-genres" value="18">Drama</option>
+          <option class="filter__form-genres" value="10751">Family</option>
+          <option class="filter__form-genres" value="14">Fantasy</option>
+          <option class="filter__form-genres" value="36">History</option>
+          <option class="filter__form-genres" value="27">Horror</option>
+          <option class="filter__form-genres" value="10402">Music</option>
+          <option class="filter__form-genres" value="9648">Mystery</option>
+          <option class="filter__form-genres" value="10749">Romance</option>
+          <option class="filter__form-genres" value="878">Science Fiction</option>
+          <option class="filter__form-genres" value="10770">TV Movie</option>
+          <option class="filter__form-genres" value="53">Thriller</option>
+          <option class="filter__form-genres" value="10752">War</option>
+          <option class="filter__form-genres" value="37">Western</option>
+        </select>
 
-      </label>
-      <label>
-        <input id="js-video" type="radio" name="response-type">
+        <select class="filter__form-select filter__form-select--year" name="yearForm" id="yearFilter">
+          <option value="start">Year</option>
+        </select>
 
-        <span> Video</span>
+        <select class="filter__form-select filter__form-select--sort" name="sortForm" id="sortFilter">
+          <option class="filter__form-sort" value="start">Sort</option>
+          <option class="filter__form-sort" value="popularity.asc">
+            Popularity (ascending)
+          </option>
+          <option class="filter__form-sort" value="popularity.desc">
+            Popularity (descending)
+          </option>
+        </select>
 
-      </label>
-
-    </form>
-    <div class="form__group field">
-      <input type="input" name="searchQuery" class="form__field" id="search-box" autocomplete="off"
-        placeholder="Enter here..." />
-      <label for="name" class="form__label">Enter here:</label>
+        <button type="button" class="button__reset" id="resetBtn">
+          Reset filters
+        </button>
+      </form>
     </div>
   </header>
-  <div class="main-content">
-    <div>
-      <ul class="gallery">
 
-      </ul>
-    </div>
-  </div>
-  <img class="load-more-btn disabled" src="../src/images/Loading_2.gif" width="50px">
 
   <script src="index.js" type="module"></script>
 </body>
