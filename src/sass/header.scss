@@ -9,6 +9,57 @@
     max-width: 1200px;
   }
 }
+html {
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 15px;
+  /* ширина для вертикального скролла */
+  height: 8px;
+  /* высота для горизонтального скролла */
+  background-color: $almost-white;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: $almost-orange;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+//     background-color: var();
+// }
+::-webkit-scrollbar-button:vertical:start:decrement {
+  background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+  background-color: $almost-orange;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  background: linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+  background-color: $almost-orange;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  background: linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+  background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  background: linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+  background-color: #f6f8f4;
+}
 
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(63, 2, 2, 0.4)),
@@ -109,7 +160,11 @@
       @include breakpoint(tab) {
         display: flex;
         align-items: center;
-
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.17;
+        position: relative;
         .navigation__logo-link--name {
           display: block;
           margin-left: 15px;
@@ -232,7 +287,6 @@
       color: $almost-white;
       background-color: transparent;
       border: 1px solid $almost-white;
-      text-transform: uppercase;
       border-radius: 15px;
       padding: 5px;
       transition: color $time $time-distribution;
